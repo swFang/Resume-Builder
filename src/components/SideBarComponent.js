@@ -5,12 +5,29 @@ import * as sections from "../StaticInfo/Sections.json";
 class SideBarComponent extends React.Component {
     constructor(props) {
         super(props);
-        console.log(sections);
+        console.log(sections.SECTIONS);
+    }
+
+    createDivs() {
+        const sectionArr = sections.SECTIONS;
+        sectionArr.forEach(element => {
+            return (
+                <div>
+                    {element}
+                </div>
+            )
+        });
     }
 
     render() {
-        console.log(this.props.data);
-        return(<p>abc</p>)
+        return(
+            <div className = "sidbar">
+                {sections.SECTIONS.map(sect => (
+                    <div className="section">{sect}</div>
+                ))}
+                sidebar
+            </div>
+        )
     }
 }
 
@@ -20,4 +37,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(TestComponent);
+export default connect(mapStateToProps)(SideBarComponent);
