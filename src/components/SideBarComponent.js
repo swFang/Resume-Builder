@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as sections from "../StaticInfo/Sections.json"; 
+import * as sections from "../StaticInfo/Sections.json";
 
 class SideBarComponent extends React.Component {
     constructor(props) {
@@ -20,4 +20,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(TestComponent);
+export default connect(mapStateToProps)(SideBarComponent);
